@@ -21,8 +21,8 @@ useEffect(()=>{
     <div>
       <input type="text" placeholder='enter chat' onChange={(e)=>setInput(e.target.value)}/>
       <button onClick={() => socket?.send(input)}>Send Message</button>
-      {message.map((msg)=>(
-        <div>
+      {message.map((msg,idx)=>(
+        <div key={idx}>
           {msg}
         </div>
       ))}
